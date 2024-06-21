@@ -125,16 +125,14 @@ public class Duck {
             moveY = 10;
             y += moveY;
 
-            if (y > panelHeight) {
-                gamePanel.removeDuck(this);
-            }
-
             long currentTime = System.currentTimeMillis();
             if (currentTime - lastFrameTime > ANIMATION_DELAY) {
                 currentFrame = (currentFrame + 1) % duckImagesFalling.length;
                 lastFrameTime = currentTime;
             }
         }
+
+        System.out.println("Posição do pato: (" + x + ", " + y + ")");
 
     }
 
